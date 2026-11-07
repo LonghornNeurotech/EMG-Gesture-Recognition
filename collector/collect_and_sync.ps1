@@ -12,7 +12,7 @@ param(
     [double]$Duration = 2.0,
 
     [ValidateSet(50, 100)]
-    [int]$SampleRate = 50,
+    [int]$SampleRate = 100,
 
     [string]$PiTarget = "zero@lhnt.local",
 
