@@ -1,0 +1,8 @@
+,idle,pronation,supination,forearm_raise,forearm_lower,forearm_inward,forearm_outward
+idle,97.5,0.0,0.0,2.5,0.0,0.0,0.0
+pronation,7.5,90.0,0.0,0.0,0.0,2.5,0.0
+supination,12.5,0.0,87.5,0.0,0.0,0.0,0.0
+forearm_raise,20.0,0.0,0.0,80.0,0.0,0.0,0.0
+forearm_lower,10.0,0.0,0.0,0.0,90.0,0.0,0.0
+forearm_inward,10.0,2.5,0.0,0.0,0.0,87.5,0.0
+forearm_outward,22.5,0.0,2.5,0.0,0.0,0.0,75.0

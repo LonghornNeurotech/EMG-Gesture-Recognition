@@ -1,0 +1,11 @@
+gesture,loso_prediction,count
+forearm_raise,idle,11
+forearm_lower,idle,8
+forearm_outward,idle,7
+forearm_outward,supination,3
+forearm_raise,pronation,3
+pronation,idle,2
+supination,idle,2
+idle,forearm_raise,1
+pronation,forearm_inward,1
+forearm_inward,idle,1

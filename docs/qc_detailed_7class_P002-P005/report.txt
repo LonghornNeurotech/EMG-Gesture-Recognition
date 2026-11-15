@@ -1,0 +1,125 @@
+SEVEN-CLASS IMU DATASET QC
+======================================================================
+Trials: 280
+PC1 explained variance: 32.80%
+PC2 explained variance: 21.33%
+PC1 + PC2 explained variance: 54.13%
+Global nearest-centroid agreement: 95.7%
+LOSO nearest-centroid accuracy: 86.8%
+
+HELD-OUT PARTICIPANT ACCURACY
+participant
+P002     95.7
+P003     81.4
+P004     70.0
+P005    100.0
+
+HELD-OUT PARTICIPANT/CLASS RECALL (%)
+gesture       idle  pronation  supination  forearm_raise  forearm_lower  forearm_inward  forearm_outward
+participant                                                                                             
+P002          90.0      100.0       100.0          100.0           80.0           100.0            100.0
+P003         100.0       60.0       100.0           20.0          100.0           100.0             90.0
+P004         100.0      100.0        50.0          100.0           80.0            50.0             10.0
+P005         100.0      100.0       100.0          100.0          100.0           100.0            100.0
+
+OVERALL LOSO CONFUSION MATRIX (%)
+                 idle  pronation  supination  forearm_raise  forearm_lower  forearm_inward  forearm_outward
+idle             97.5        0.0         0.0            2.5            0.0             0.0              0.0
+pronation         7.5       90.0         0.0            0.0            0.0             2.5              0.0
+supination       12.5        0.0        87.5            0.0            0.0             0.0              0.0
+forearm_raise    20.0        0.0         0.0           80.0            0.0             0.0              0.0
+forearm_lower    10.0        0.0         0.0            0.0           90.0             0.0              0.0
+forearm_inward   10.0        2.5         0.0            0.0            0.0            87.5              0.0
+forearm_outward  22.5        0.0         2.5            0.0            0.0             0.0             75.0
+
+LOSO ERROR PAIRS
+        gesture loso_prediction  count
+forearm_outward            idle      9
+  forearm_raise            idle      8
+     supination            idle      5
+  forearm_lower            idle      4
+ forearm_inward            idle      4
+      pronation            idle      3
+           idle   forearm_raise      1
+      pronation  forearm_inward      1
+forearm_outward      supination      1
+ forearm_inward       pronation      1
+
+PAIRWISE SEPARATION — HIGHER IS BETTER
+                 idle  pronation  supination  forearm_raise  forearm_lower  forearm_inward  forearm_outward
+idle              NaN       1.50        2.27           1.55           1.50            1.52             1.60
+pronation        1.50        NaN        2.74           1.55           1.94            1.60             1.99
+supination       2.27       2.74         NaN           2.42           1.73            2.11             1.41
+forearm_raise    1.55       1.55        2.42            NaN           2.33            2.00             1.54
+forearm_lower    1.50       1.94        1.73           2.33            NaN            1.51             1.62
+forearm_inward   1.52       1.60        2.11           2.00           1.51             NaN             2.20
+forearm_outward  1.60       1.99        1.41           1.54           1.62            2.20              NaN
+
+IDLE TRIALS NEAREST TO ANOTHER CLASS IN 2D PCA
+participant gesture                                 file pca2_nearest_class global_nearest_class loso_prediction  own_class_outlier_z
+       P003    idle data\raw\P003\S01\idle\trial_001.csv      forearm_lower                 idle            idle             0.548049
+       P003    idle data\raw\P003\S01\idle\trial_002.csv      forearm_lower                 idle            idle             0.660133
+       P003    idle data\raw\P003\S01\idle\trial_003.csv      forearm_lower                 idle            idle             0.968187
+       P003    idle data\raw\P003\S01\idle\trial_004.csv      forearm_lower                 idle            idle             0.949142
+       P003    idle data\raw\P003\S01\idle\trial_005.csv      forearm_lower                 idle            idle             1.152279
+       P003    idle data\raw\P003\S01\idle\trial_006.csv      forearm_lower                 idle            idle             0.906263
+       P003    idle data\raw\P003\S01\idle\trial_007.csv      forearm_lower                 idle            idle             0.862846
+       P003    idle data\raw\P003\S01\idle\trial_008.csv      forearm_lower                 idle            idle             0.891636
+       P003    idle data\raw\P003\S01\idle\trial_009.csv      forearm_lower                 idle            idle             0.933639
+       P003    idle data\raw\P003\S01\idle\trial_010.csv      forearm_lower                 idle            idle             0.994399
+       P004    idle data\raw\P004\S01\idle\trial_001.csv          pronation                 idle            idle             1.045899
+       P004    idle data\raw\P004\S01\idle\trial_002.csv          pronation                 idle            idle             0.733836
+       P004    idle data\raw\P004\S01\idle\trial_003.csv          pronation                 idle            idle             0.694957
+       P004    idle data\raw\P004\S01\idle\trial_004.csv          pronation                 idle            idle             0.612480
+       P004    idle data\raw\P004\S01\idle\trial_005.csv          pronation                 idle            idle             0.770621
+       P004    idle data\raw\P004\S01\idle\trial_006.csv          pronation                 idle            idle             0.584822
+       P004    idle data\raw\P004\S01\idle\trial_009.csv          pronation                 idle            idle             0.505945
+
+IDLE TRIALS NEAREST TO ANOTHER CLASS GLOBALLY
+participant gesture                                 file pca2_nearest_class global_nearest_class loso_prediction  own_class_outlier_z
+       P002    idle data\raw\P002\S01\idle\trial_001.csv               idle        forearm_raise   forearm_raise             2.975135
+
+IDLE TRIALS MISCLASSIFIED WHEN PARTICIPANT IS HELD OUT
+participant gesture                                 file pca2_nearest_class global_nearest_class loso_prediction  own_class_outlier_z
+       P002    idle data\raw\P002\S01\idle\trial_001.csv               idle        forearm_raise   forearm_raise             2.975135
+
+TRIALS WRONG GLOBALLY AND IN HELD-OUT TESTING
+participant         gesture                                            file pca2_nearest_class global_nearest_class loso_prediction  own_class_outlier_z
+       P002            idle            data\raw\P002\S01\idle\trial_001.csv               idle        forearm_raise   forearm_raise             2.975135
+       P003       pronation       data\raw\P003\S01\pronation\trial_002.csv               idle                 idle            idle             0.691268
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_001.csv               idle                 idle            idle             1.626003
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_002.csv               idle                 idle            idle             1.598222
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_003.csv               idle                 idle            idle             1.475288
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_004.csv               idle                 idle            idle             1.006270
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_005.csv               idle                 idle            idle             0.722495
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_006.csv               idle                 idle            idle             1.003820
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_007.csv               idle                 idle            idle             0.344302
+       P004      supination      data\raw\P004\S01\supination\trial_008.csv      forearm_lower                 idle            idle             0.988130
+       P004   forearm_lower   data\raw\P004\S01\forearm_lower\trial_007.csv               idle                 idle            idle             0.902385
+       P004 forearm_outward data\raw\P004\S01\forearm_outward\trial_008.csv               idle                 idle            idle             0.549472
+
+TOP 20 OWN-CLASS OUTLIERS
+participant         gesture                                            file pca2_nearest_class global_nearest_class loso_prediction  own_class_outlier_z
+       P003 forearm_outward data\raw\P003\S01\forearm_outward\trial_008.csv    forearm_outward      forearm_outward      supination             4.384514
+       P002            idle            data\raw\P002\S01\idle\trial_001.csv               idle        forearm_raise   forearm_raise             2.975135
+       P002   forearm_raise   data\raw\P002\S01\forearm_raise\trial_008.csv      forearm_raise        forearm_raise   forearm_raise             2.829953
+       P002  forearm_inward  data\raw\P002\S01\forearm_inward\trial_009.csv     forearm_inward       forearm_inward  forearm_inward             2.515113
+       P002      supination      data\raw\P002\S01\supination\trial_001.csv         supination           supination      supination             2.487551
+       P002   forearm_lower   data\raw\P002\S01\forearm_lower\trial_009.csv      forearm_lower        forearm_lower   forearm_lower             2.444505
+       P003 forearm_outward data\raw\P003\S01\forearm_outward\trial_007.csv    forearm_outward      forearm_outward forearm_outward             2.344012
+       P002  forearm_inward  data\raw\P002\S01\forearm_inward\trial_010.csv     forearm_inward       forearm_inward  forearm_inward             2.326338
+       P002  forearm_inward  data\raw\P002\S01\forearm_inward\trial_007.csv     forearm_inward       forearm_inward  forearm_inward             2.088743
+       P002   forearm_lower   data\raw\P002\S01\forearm_lower\trial_006.csv               idle        forearm_lower   forearm_lower             1.994383
+       P002   forearm_lower   data\raw\P002\S01\forearm_lower\trial_010.csv      forearm_lower        forearm_lower   forearm_lower             1.867518
+       P002       pronation       data\raw\P002\S01\pronation\trial_001.csv          pronation            pronation       pronation             1.691475
+       P002   forearm_lower   data\raw\P002\S01\forearm_lower\trial_003.csv               idle        forearm_lower   forearm_lower             1.655716
+       P004       pronation       data\raw\P004\S01\pronation\trial_009.csv          pronation            pronation       pronation             1.634100
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_001.csv               idle                 idle            idle             1.626003
+       P005   forearm_raise   data\raw\P005\S01\forearm_raise\trial_009.csv      forearm_raise        forearm_raise   forearm_raise             1.608468
+       P003   forearm_raise   data\raw\P003\S01\forearm_raise\trial_002.csv               idle                 idle            idle             1.598222
+       P002       pronation       data\raw\P002\S01\pronation\trial_009.csv          pronation            pronation       pronation             1.566346
+       P002  forearm_inward  data\raw\P002\S01\forearm_inward\trial_008.csv     forearm_inward       forearm_inward  forearm_inward             1.501301
+       P002  forearm_inward  data\raw\P002\S01\forearm_inward\trial_006.csv     forearm_inward       forearm_inward  forearm_inward             1.497069
+
+RECORDED ACQUISITION ISSUES
+  None
